@@ -7,6 +7,6 @@ mkdir -p ~/repos/config
 git clone git@github.com:istein/dotfiles.git ~/repos/config
 
 # Add a new file
-mv ~/.thingrc ./
-./link.sh
+mv ~/.thingrc ./homedir/.thingrc
+stow --target=$HOME --restow --verbose homedir
 ```

@@ -25,7 +25,8 @@
 	save = !git pull && git add -A && git autocommit && git push
 	fire = !git co -b ias_backup_$(date +%s) && git add -A && git autocommit && git pushup
 	initc = !git init && git co -b main && git add -A && git autocommit
-
+	conf = config --list --show-origin
+	
 [init]
 	defaultBranch = main
 

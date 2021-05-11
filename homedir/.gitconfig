@@ -22,11 +22,11 @@
 	pushup = !git push --set-upstream origin $(git onbranch)
 	autocommit = !git commit -m \"$(git status --porcelain)\"
 	mkpatch = !mkdir -p ../patches && git add --intent-to-add -A && git diff > ../patches/`date +"%Y-%m-%dT%H-%M-%S%Z"`-`git basename`-`git onbranch`.diff
-	save = !git pull && git add -A && git autocommit && git push
+	sync = !git pull && git add -A && git autocommit && git push
 	fire = !git co -b ias_backup_$(date +%s) && git add -A && git autocommit && git pushup
 	initc = !git init && git co -b main && git add -A && git autocommit
 	conf = config --list --show-origin
-	
+
 [init]
 	defaultBranch = main
 

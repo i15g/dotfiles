@@ -16,9 +16,12 @@ mv ~/.thingrc ./homedir
 ```bash
 sudo apt install stow
 
-# https://brew.sh/ 
+# https://brew.sh/
 brew install stow
 ```
+
+## TODO
+- Hook that runs relink.sh on git pull?
 
 ## Ref
 - https://dotfiles.github.io/

@@ -1,0 +1,34 @@
+[user]
+	name = Isaac A Stein
+	email = isaacstein8@gmail.com
+	# TODO core.editor
+	# TODO merge.tool
+
+[alias]
+	co = checkout
+	s = status
+	d = diff
+	l = log -5
+	unstage = reset HEAD --
+	onbranch = symbolic-ref --short HEAD
+	root = rev-parse --show-toplevel
+	basename = !basename `git root`
+	upstream-name = !git remote | egrep -o '(upstream|origin)' | tail -1
+	default-branch = !git remote show $(git upstream-name) | awk '/HEAD branch/ {print $NF}'
+	pom = pull origin $(git default-branch)
+	url = remote get-url $(git upstream-name)
+	alias = !git config --global --list | grep alias | cut -c 7- | sort
+	nuke = !git fetch && git reset --hard $(git upstream-name)/$(git default-branch) && git clean -fxd
+	pushup = !git push --set-upstream origin $(git onbranch)
+	autocommit = !git commit -m \"$(git status --porcelain)\"
+	mkpatch = !mkdir -p ../patches && git add --intent-to-add -A && git diff > ../patches/`date +"%Y-%m-%dT%H-%M-%S%Z"`-`git basename`-`git onbranch`.diff
+	save = !git pull && git add -A && git autocommit && git push
+	fire = !git co -b ias_backup_$(date +%s) && git add -A && git autocommit && git pushup
+	initc = !git init && git co -b main && git add -A && git autocommit
+
+[init]
+	defaultBranch = main
+
+[color "status"]
+	branch = blue bold
+	changed = yellow

@@ -3,7 +3,7 @@
 ```bash
 # First time install:
 sudo apt install stow # or equivalent for OS
-mkdir -p ~/repos/{config,notes,patches,projects,tutorials}
+mkdir -p ~/repos/{config,notes/ref,patches,projects,tutorials,misc}
 git clone git@github.com:istein/dotfiles.git ~/repos/config
 ./relink.sh
 

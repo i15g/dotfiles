@@ -1,3 +1,5 @@
+alias l="ls -lAh"
+
 # timestamps
 alias epoch="date +%s"
 alias datetime="date +"%Y-%m-%dT%H-%M-%S%Z""

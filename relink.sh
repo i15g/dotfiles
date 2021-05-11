@@ -1,1 +1,1 @@
-stow --target=$HOME --restow --verbose homedir
+stow --target=$HOME --restow --verbose --ignore="\.DS_Store" homedir

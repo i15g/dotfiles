@@ -2,7 +2,6 @@
 
 ```bash
 # First time install:
-sudo apt install stow # or equivalent for OS
 mkdir -p ~/repos/{config,notes/ref,patches,projects,tutorials,misc}
 git clone git@github.com:istein/dotfiles.git ~/repos/config/dotfiles
 ./relink.sh
@@ -11,6 +10,14 @@ git clone git@github.com:istein/dotfiles.git ~/repos/config/dotfiles
 cp ~/.thingrc ~/.thingrc.backup
 mv ~/.thingrc ./homedir
 ./relink.sh
+```
+
+## Install gnu stow
+```bash
+sudo apt install stow
+
+# https://brew.sh/ 
+brew install stow
 ```
 
 ## Ref

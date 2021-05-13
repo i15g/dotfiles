@@ -35,6 +35,7 @@ alias notes='code ~/repos/notes.code-workspace'
 
 # docker
 # top command for docker containers - see https://github.com/bcicen/ctop
+alias dockerc='docker-compose'
 alias ctop='docker run --rm -ti --name=ctop --volume /var/run/docker.sock:/var/run/docker.sock:ro quay.io/vektorlab/ctop:latest'
 alias dps='docker ps --format "{{.Names}}\n\tContainer ID: {{.ID}}\n\tCommand: {{.Command}}\n\tImage: {{.Image}}\n\tCreatedAt: {{.CreatedAt}}\n\tStatus: {{.Status}}"'
 
